@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Student Information Management System</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<div class="container">
+<h1>Student Information Management System</h1>
+<div class="tabs">
+<button class="tab active" data-tab="students">Students</button>
+<button class="tab" data-tab="courses">Courses</button>
+<button class="tab" data-tab="enrollments">Enrollments</button>
+</div>
+
+<div id="students" class="panel active">
+<h2>Student Management</h2>
+<div class="form-row">
+<input id="s-id" placeholder="Student ID">
+<input id="s-name" placeholder="Name">
+<button onclick="addStudent()">Add</button>
+</div>
+<div class="form-row">
+<input id="s-search" placeholder="Search by ID">
+<button onclick="searchStudent()">Search</button>
+<button onclick="loadStudents()">Show All</button>
+</div>
+<table><thead><tr><th>Student ID</th><th>Name</th><th>Action</th></tr></thead><tbody id="students-tbody"></tbody></table>
+</div>
+
+<div id="courses" class="panel">
+<h2>Course Management</h2>
+<div class="form-row">
+<input id="c-code" placeholder="Course Code">
+<input id="c-title" placeholder="Title">
+<button onclick="addCourse()">Add</button>
+<button onclick="loadCourses()">Show All</button>
+</div>
+<table><thead><tr><th>Course Code</th><th>Title</th><th>Action</th></tr></thead><tbody id="courses-tbody"></tbody></table>
+</div>
+
+<div id="enrollments" class="panel">
+<h2>Enrollment Management</h2>
+<div class="form-row">
+<input id="e-sid" placeholder="Student ID">
+<input id="e-ccode" placeholder="Course Code">
+<button onclick="enroll()">Enroll</button>
+</div>
+<div class="form-row">
+<input id="e-qsid" placeholder="Search by Student ID">
+<button onclick="queryByStudent()">Search</button>
+<input id="e-qccode" placeholder="Search by Course Code">
+<button onclick="queryByCourse()">Search</button>
+</div>
+<table><thead><tr><th>Student ID</th><th>Course Code</th><th>Action</th></tr></thead><tbody id="enrollments-tbody"></tbody></table>
+<p id="enroll-hint" class="hint">Search enrollments by student ID or course code</p>
+</div>
+</div>
+<script src="/app.js"></script>
+</body>
+</html>
